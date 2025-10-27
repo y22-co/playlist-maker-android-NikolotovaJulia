@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.playlist_maker_android_nikolotovayulia.app-mergeDebugResources-40:/values-v30/values-v30.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\guezwhozbak\\.gradle\\caches\\8.13\\transforms\\98a5854e20c5fb99583073bafb81721b\\transformed\\material3-release\\res\\values-v30\\values-v30.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "72",
+                        "endOffsets": "123"
+                    }
+                }
+            ]
+        }
+    ]
+}

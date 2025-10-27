@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">playlist_maker_android_nikolotovayulia</string>
+    <string name="playlist_maker">Playlist Maker</string>
+    <string name="share_app">Поделиться приложением</string>
+    <string name="contact_developers">Написать разработчикам</string>
+    <string name="legal_agreement">Пользовательское соглашение</string>
+    <string name="share_message">Попробуйте классное приложение Playlist Maker!</string>
+    <string name="developer_email">nikolotova.yulia@yandex.ru</string>
+    <string name="email_subject">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="email_body">Спасибо разработчикам и разработчицам за крутое приложение!</string>
+    <string name="legal_document_url">https://practicum.yandex.ru/media/terms/offer/</string>
+</resources>

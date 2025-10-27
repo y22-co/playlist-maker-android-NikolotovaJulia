@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">playlist_maker_android_nikolotovayulia</string>
+    <string name="contact_developers">Написать разработчикам</string>
+    <string name="developer_email">nikolotova.yulia@yandex.ru</string>
+    <string name="email_body">Спасибо разработчикам и разработчицам за крутое приложение!</string>
+    <string name="email_subject">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="legal_agreement">Пользовательское соглашение</string>
+    <string name="legal_document_url">https://practicum.yandex.ru/media/terms/offer/</string>
+    <string name="playlist_maker">Playlist Maker</string>
+    <string name="share_app">Поделиться приложением</string>
+    <string name="share_message">Попробуйте классное приложение Playlist Maker!</string>
+    <style name="Theme.PlaylistMakerAndroidNikolotovaYulia" parent="android:Theme.Material.Light.NoActionBar"/>
+</resources>
