@@ -9,4 +9,15 @@
     <string name="email_subject">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
     <string name="email_body">Спасибо разработчикам и разработчицам за крутое приложение!</string>
     <string name="legal_document_url">https://practicum.yandex.ru/media/terms/offer/</string>
+    <string name="search_hint">Поиск</string>
+    <string name="clear_text">Очистить</string>
+    <string name="search_button_text">Искать</string>
+    <string name="initial_message">Введите запрос для поиска треков</string>
+    <string name="nothing_found">Ничего не найдено</string>
+    <string name="error_message">Ошибка: %1$s</string>
+    <string name="app_name_title">Playlist maker</string>
+    <string name="menu_search">Поиск</string>
+    <string name="menu_playlists">Плейлисты</string>
+    <string name="menu_favorites">Избранное</string>
+    <string name="menu_settings">Настройки</string>
 </resources>

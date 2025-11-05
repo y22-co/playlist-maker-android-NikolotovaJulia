@@ -16,9 +16,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
+import com.example.playlist_maker_android_nikolotovayulia.R
 
 @Composable
 fun MainScreen(
@@ -33,23 +35,32 @@ fun MainScreen(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Color(0xFF3D6EFF), RoundedCornerShape(bottomStart = 12.dp, bottomEnd = 12.dp))
-                .padding(vertical = 20.dp, horizontal = 16.dp)
+                .background(
+                    Color(0xFF3D6EFF),
+                    RoundedCornerShape(
+                        bottomStart = dimensionResource(R.dimen.corner_radius_bottom),
+                        bottomEnd = dimensionResource(R.dimen.corner_radius_bottom)
+                    )
+                )
+                .padding(
+                    vertical = dimensionResource(R.dimen.padding_header_vertical),
+                    horizontal = dimensionResource(R.dimen.padding_header_horizontal)
+                )
         ) {
             Text(
-                text = "Playlist maker",
+                text = stringResource(R.string.app_name_title),
                 color = Color.White,
-                fontSize = 20.sp,
+                fontSize = dimensionResource(R.dimen.font_size_header).value.sp,
                 fontWeight = FontWeight.Bold
             )
         }
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(dimensionResource(R.dimen.spacing_small)))
 
-        DrawerItem(icon = Icons.Default.Search, text = "Поиск", onClick = onNavigateToSearch)
-        DrawerItem(icon = Icons.Default.PlayArrow, text = "Плейлисты", onClick = {})
-        DrawerItem(icon = Icons.Default.FavoriteBorder, text = "Избранное", onClick = {})
-        DrawerItem(icon = Icons.Default.Settings, text = "Настройки", onClick = onNavigateToSettings)
+        DrawerItem(icon = Icons.Default.Search, text = stringResource(R.string.menu_search), onClick = onNavigateToSearch)
+        DrawerItem(icon = Icons.Default.PlayArrow, text = stringResource(R.string.menu_playlists), onClick = {})
+        DrawerItem(icon = Icons.Default.FavoriteBorder, text = stringResource(R.string.menu_favorites), onClick = {})
+        DrawerItem(icon = Icons.Default.Settings, text = stringResource(R.string.menu_settings), onClick = onNavigateToSettings)
     }
 }
 
@@ -63,22 +74,25 @@ fun DrawerItem(
         modifier = Modifier
             .fillMaxWidth()
             .clickable { onClick() }
-            .padding(horizontal = 16.dp, vertical = 16.dp),
+            .padding(
+                horizontal = dimensionResource(R.dimen.padding_item_horizontal),
+                vertical = dimensionResource(R.dimen.padding_item_vertical)
+            ),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
             imageVector = icon,
             contentDescription = null,
             tint = Color.Black.copy(alpha = 0.85f),
-            modifier = Modifier.size(22.dp)
+            modifier = Modifier.size(dimensionResource(R.dimen.icon_size_mainscreen))
         )
 
-        Spacer(modifier = Modifier.width(16.dp))
+        Spacer(modifier = Modifier.width(dimensionResource(R.dimen.spacing_medium)))
 
         Text(
             text = text,
             color = Color.Black.copy(alpha = 0.9f),
-            fontSize = 16.sp,
+            fontSize = dimensionResource(R.dimen.font_size_item).value.sp,
             fontWeight = FontWeight.Medium,
             modifier = Modifier.weight(1f)
         )

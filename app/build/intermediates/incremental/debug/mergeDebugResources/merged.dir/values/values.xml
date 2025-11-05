@@ -24,6 +24,7 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
+    <dimen name="button_padding_vertical">8dp</dimen>
     <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
     <dimen name="compat_button_inset_vertical_material">6dp</dimen>
     <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
@@ -31,6 +32,13 @@
     <dimen name="compat_control_corner_material">2dp</dimen>
     <dimen name="compat_notification_large_icon_max_height">320dp</dimen>
     <dimen name="compat_notification_large_icon_max_width">320dp</dimen>
+    <dimen name="corner_radius_bottom">12dp</dimen>
+    <dimen name="divider_thickness">0.5dp</dimen>
+    <dimen name="font_size_header">20sp</dimen>
+    <dimen name="font_size_item">16sp</dimen>
+    <dimen name="icon_padding_end">8dp</dimen>
+    <dimen name="icon_size">40dp</dimen>
+    <dimen name="icon_size_mainscreen">22dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>
@@ -46,6 +54,16 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="padding_default">20dp</dimen>
+    <dimen name="padding_default_settings">16dp</dimen>
+    <dimen name="padding_header_horizontal">16dp</dimen>
+    <dimen name="padding_header_vertical">20dp</dimen>
+    <dimen name="padding_item_horizontal">16dp</dimen>
+    <dimen name="padding_item_vertical">16dp</dimen>
+    <dimen name="padding_vertical">12dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_medium_settings">12dp</dimen>
+    <dimen name="spacing_small">10dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="accessibility_action_clickable_span" type="id"/>
@@ -123,6 +141,7 @@
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <string name="androidx_startup" translatable="false">androidx.startup</string>
     <string name="app_name">playlist_maker_android_nikolotovayulia</string>
+    <string name="app_name_title">Playlist maker</string>
     <string name="autofill">Autofill</string>
     <string name="call_notification_answer_action">Answer</string>
     <string name="call_notification_answer_video_action">Video</string>
@@ -131,6 +150,7 @@
     <string name="call_notification_incoming_text">Incoming call</string>
     <string name="call_notification_ongoing_text">Ongoing call</string>
     <string name="call_notification_screening_text">Screening an incoming call</string>
+    <string name="clear_text">Очистить</string>
     <string name="close_drawer">"Close navigation menu"</string>
     <string name="close_sheet">"Close sheet"</string>
     <string name="contact_developers">Написать разработчикам</string>
@@ -140,8 +160,10 @@
     <string name="dropdown_menu">"Dropdown menu"</string>
     <string name="email_body">Спасибо разработчикам и разработчицам за крутое приложение!</string>
     <string name="email_subject">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="error_message">Ошибка: %1$s</string>
     <string name="in_progress">In progress</string>
     <string name="indeterminate">Partially checked</string>
+    <string name="initial_message">Введите запрос для поиска треков</string>
     <string name="legal_agreement">Пользовательское соглашение</string>
     <string name="legal_document_url">https://practicum.yandex.ru/media/terms/offer/</string>
     <string name="m3c_bottom_sheet_collapse_description">Collapse bottom sheet</string>
@@ -205,11 +227,18 @@
     <string name="m3c_time_picker_pm">PM</string>
     <string name="m3c_tooltip_long_press_label">Show tooltip</string>
     <string name="m3c_tooltip_pane_description">Tooltip</string>
+    <string name="menu_favorites">Избранное</string>
+    <string name="menu_playlists">Плейлисты</string>
+    <string name="menu_search">Поиск</string>
+    <string name="menu_settings">Настройки</string>
     <string name="navigation_menu">"Navigation menu"</string>
     <string name="not_selected">Not selected</string>
+    <string name="nothing_found">Ничего не найдено</string>
     <string name="playlist_maker">Playlist Maker</string>
     <string name="range_end">"Range end"</string>
     <string name="range_start">"Range start"</string>
+    <string name="search_button_text">Искать</string>
+    <string name="search_hint">Поиск</string>
     <string name="selected">Selected</string>
     <string name="share_app">Поделиться приложением</string>
     <string name="share_message">Попробуйте классное приложение Playlist Maker!</string>
