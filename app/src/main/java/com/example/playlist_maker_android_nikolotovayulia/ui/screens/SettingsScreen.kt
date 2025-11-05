@@ -8,8 +8,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat.startActivity
 import com.example.playlist_maker_android_nikolotovayulia.R
 
@@ -17,7 +17,6 @@ import com.example.playlist_maker_android_nikolotovayulia.R
 fun SettingsScreen(onNavigateBack: () -> Unit) {
     val context = LocalContext.current
 
-    // Вызов stringResource только внутри @Composable
     val shareMessage = stringResource(id = R.string.share_message)
     val developerEmail = stringResource(id = R.string.developer_email)
     val emailSubject = stringResource(id = R.string.email_subject)
@@ -25,8 +24,10 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
     val legalDocumentUrl = stringResource(id = R.string.legal_document_url)
 
     Column(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(dimensionResource(R.dimen.padding_default)),
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.spacing_medium))
     ) {
         Button(onClick = {
             val sendIntent = Intent().apply {
@@ -60,4 +61,3 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
         }
     }
 }
-
