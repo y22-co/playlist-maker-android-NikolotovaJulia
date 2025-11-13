@@ -21,46 +21,89 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import com.example.playlist_maker_android_nikolotovayulia.R
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun MainScreen(
     onNavigateToSearch: () -> Unit,
-    onNavigateToSettings: () -> Unit
+    onNavigateToSettings: () -> Unit,
+    onNavigateToPlaylists: () -> Unit,
+    onNavigateToFavorites: () -> Unit
 ) {
+    val paddingDefault = dimensionResource(R.dimen.padding_default)
+    val spacingSmall = dimensionResource(R.dimen.spacing_small)
+    val cornerRadiusBottom = dimensionResource(R.dimen.corner_radius_bottom)
+    val paddingHeaderV = dimensionResource(R.dimen.padding_header_vertical)
+    val paddingHeaderH = dimensionResource(R.dimen.padding_header_horizontal)
+    val paddingItemH = dimensionResource(R.dimen.padding_item_horizontal)
+    val paddingItemV = dimensionResource(R.dimen.padding_item_vertical)
+    val iconSize = dimensionResource(R.dimen.icon_size_mainscreen)
+    val fontSizeHeader = dimensionResource(R.dimen.font_size_header).value
+    val fontSizeItem = dimensionResource(R.dimen.font_size_item).value
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFFF9F9F9))
+            .padding(0.dp)
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(
                     Color(0xFF3D6EFF),
-                    RoundedCornerShape(
-                        bottomStart = dimensionResource(R.dimen.corner_radius_bottom),
-                        bottomEnd = dimensionResource(R.dimen.corner_radius_bottom)
-                    )
+                    RoundedCornerShape(bottomStart = cornerRadiusBottom, bottomEnd = cornerRadiusBottom)
                 )
-                .padding(
-                    vertical = dimensionResource(R.dimen.padding_header_vertical),
-                    horizontal = dimensionResource(R.dimen.padding_header_horizontal)
-                )
+                .padding(vertical = paddingHeaderV, horizontal = paddingHeaderH)
         ) {
             Text(
-                text = stringResource(R.string.app_name_title),
+                text = "Playlist maker",
                 color = Color.White,
-                fontSize = dimensionResource(R.dimen.font_size_header).value.sp,
+                fontSize = fontSizeHeader.sp,
                 fontWeight = FontWeight.Bold
             )
         }
 
-        Spacer(modifier = Modifier.height(dimensionResource(R.dimen.spacing_small)))
+        Spacer(modifier = Modifier.height(spacingSmall))
 
-        DrawerItem(icon = Icons.Default.Search, text = stringResource(R.string.menu_search), onClick = onNavigateToSearch)
-        DrawerItem(icon = Icons.Default.PlayArrow, text = stringResource(R.string.menu_playlists), onClick = {})
-        DrawerItem(icon = Icons.Default.FavoriteBorder, text = stringResource(R.string.menu_favorites), onClick = {})
-        DrawerItem(icon = Icons.Default.Settings, text = stringResource(R.string.menu_settings), onClick = onNavigateToSettings)
+        DrawerItem(
+            icon = Icons.Default.Search,
+            text = "Поиск",
+            iconSize = iconSize,
+            paddingH = paddingItemH,
+            paddingV = paddingItemV,
+            fontSizeSp = fontSizeItem.sp,
+            onClick = onNavigateToSearch
+        )
+        DrawerItem(
+            icon = Icons.Default.PlayArrow,
+            text = "Плейлисты",
+            iconSize = iconSize,
+            paddingH = paddingItemH,
+            paddingV = paddingItemV,
+            fontSizeSp = fontSizeItem.sp,
+            onClick = onNavigateToPlaylists
+        )
+        DrawerItem(
+            icon = Icons.Default.FavoriteBorder,
+            text = "Избранное",
+            iconSize = iconSize,
+            paddingH = paddingItemH,
+            paddingV = paddingItemV,
+            fontSizeSp = fontSizeItem.sp,
+            onClick = onNavigateToFavorites
+        )
+        DrawerItem(
+            icon = Icons.Default.Settings,
+            text = "Настройки",
+            iconSize = iconSize,
+            paddingH = paddingItemH,
+            paddingV = paddingItemV,
+            fontSizeSp = fontSizeItem.sp,
+            onClick = onNavigateToSettings
+        )
     }
 }
 
@@ -68,31 +111,30 @@ fun MainScreen(
 fun DrawerItem(
     icon: ImageVector,
     text: String,
+    iconSize: Dp,
+    paddingH: Dp,
+    paddingV: Dp,
+    fontSizeSp: TextUnit,
     onClick: () -> Unit
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .clickable { onClick() }
-            .padding(
-                horizontal = dimensionResource(R.dimen.padding_item_horizontal),
-                vertical = dimensionResource(R.dimen.padding_item_vertical)
-            ),
+            .padding(horizontal = paddingH, vertical = paddingV),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
             imageVector = icon,
             contentDescription = null,
             tint = Color.Black.copy(alpha = 0.85f),
-            modifier = Modifier.size(dimensionResource(R.dimen.icon_size_mainscreen))
+            modifier = Modifier.size(iconSize)
         )
-
         Spacer(modifier = Modifier.width(dimensionResource(R.dimen.spacing_medium)))
-
         Text(
             text = text,
             color = Color.Black.copy(alpha = 0.9f),
-            fontSize = dimensionResource(R.dimen.font_size_item).value.sp,
+            fontSize = fontSizeSp,
             fontWeight = FontWeight.Medium,
             modifier = Modifier.weight(1f)
         )

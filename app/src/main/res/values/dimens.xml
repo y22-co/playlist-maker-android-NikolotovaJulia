@@ -17,4 +17,9 @@
     <dimen name="font_size_item">16sp</dimen>
     <dimen name="padding_default_settings">16dp</dimen>
     <dimen name="spacing_medium_settings">12dp</dimen>
+
+    <dimen name="topappbar_height_min">56dp</dimen>
+    <dimen name="row_height_min">56dp</dimen>
+    <dimen name="spacing_list_between_items">12dp</dimen>
+    <dimen name="divider_alpha_hint">12</dimen>
 </resources>
