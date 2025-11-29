@@ -22,4 +22,8 @@
     <string name="menu_settings">Настройки</string>
     <string name="theme_switch_title">Темная тема</string>
     <string name="settings_title">Настройки</string>
+
+    <string name="open_panel_button">Открыть панель</string>
+    <string name="fab_description">Открыть панель действий</string>
+    <string name="bottomsheet_text">Это панель BottomSheet</string>
 </resources>

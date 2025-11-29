@@ -15,7 +15,7 @@ class TracksRepositoryImpl(private val networkClient: NetworkClient) : TracksRep
     override suspend fun searchTracks(expression: String): List<Track> {
         if (expression.isBlank()) return emptyList()
         val response = networkClient.doRequest(TracksSearchRequest(expression))
-        delay(300) // легкий дебаунс имитации сети
+        delay(300)
         return if (response.resultCode == 200) {
             (response as TracksSearchResponse).results.map { dto ->
                 val seconds = dto.trackTimeMillis / 1000
@@ -25,7 +25,7 @@ class TracksRepositoryImpl(private val networkClient: NetworkClient) : TracksRep
                     trackName = dto.trackName,
                     artistName = dto.artistName,
                     trackTime = trackTime,
-                    playlistId = NO_PLAYLIST, // пока нет реальной привязки
+                    playlistId = NO_PLAYLIST,
                     id = dto.id,
                     favorite = dto.favorite
                 )
@@ -36,8 +36,6 @@ class TracksRepositoryImpl(private val networkClient: NetworkClient) : TracksRep
     }
 
     override suspend fun getAllTracks(): List<Track> {
-        // По требованиям поиска пустая строка не должна возвращать все треки,
-        // поэтому здесь можно вернуть пусто или предусмотреть отдельный кейс списка.
         return emptyList()
     }
 }

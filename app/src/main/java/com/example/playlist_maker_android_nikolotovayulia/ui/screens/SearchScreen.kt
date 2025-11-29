@@ -12,6 +12,7 @@ import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -122,7 +123,7 @@ fun SearchScreen(
                         itemsIndexed(tracks) { index, track ->
                             TrackListItem(track)
                             if (index < tracks.lastIndex) {
-                                Divider(
+                                HorizontalDivider(
                                     modifier = Modifier.fillMaxWidth(),
                                     thickness = dividerThickness,
                                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f)

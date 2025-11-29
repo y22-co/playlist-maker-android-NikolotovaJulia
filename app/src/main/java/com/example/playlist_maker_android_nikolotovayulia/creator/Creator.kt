@@ -5,7 +5,7 @@ import com.example.playlist_maker_android_nikolotovayulia.data.Storage
 import com.example.playlist_maker_android_nikolotovayulia.data.TracksRepositoryImpl
 import com.example.playlist_maker_android_nikolotovayulia.domain.TracksRepository
 
-object Creator {
+object   Creator {
     fun getTracksRepository(): TracksRepository {
         val storage = Storage()
         val networkClient = RetrofitNetworkClient(storage)
