@@ -1,19 +1,34 @@
 package com.example.playlist_maker_android_nikolotovayulia.data
 
-import com.example.playlist_maker_android_nikolotovayulia.domain.*
+import com.example.playlist_maker_android_nikolotovayulia.domain.NetworkClient
+import com.example.playlist_maker_android_nikolotovayulia.domain.TracksRepository
+import com.example.playlist_maker_android_nikolotovayulia.domain.TracksSearchRequest
+import com.example.playlist_maker_android_nikolotovayulia.domain.TracksSearchResponse
+import com.example.playlist_maker_android_nikolotovayulia.domain.models.Track
 import kotlinx.coroutines.delay
+import kotlin.collections.map
+import com.example.playlist_maker_android_nikolotovayulia.domain.models.NO_PLAYLIST
+
 
 class TracksRepositoryImpl(private val networkClient: NetworkClient) : TracksRepository {
 
     override suspend fun searchTracks(expression: String): List<Track> {
+        if (expression.isBlank()) return emptyList()
         val response = networkClient.doRequest(TracksSearchRequest(expression))
-        delay(1000)
+        delay(300)
         return if (response.resultCode == 200) {
-            (response as TracksSearchResponse).results.map {
-                val seconds = it.trackTimeMillis / 1000
+            (response as TracksSearchResponse).results.map { dto ->
+                val seconds = dto.trackTimeMillis / 1000
                 val minutes = seconds / 60
                 val trackTime = "%02d:%02d".format(minutes, seconds % 60)
-                Track(it.trackName, it.artistName, trackTime)
+                Track(
+                    trackName = dto.trackName,
+                    artistName = dto.artistName,
+                    trackTime = trackTime,
+                    playlistId = NO_PLAYLIST,
+                    id = dto.id,
+                    favorite = dto.favorite
+                )
             }
         } else {
             emptyList()
@@ -21,15 +36,6 @@ class TracksRepositoryImpl(private val networkClient: NetworkClient) : TracksRep
     }
 
     override suspend fun getAllTracks(): List<Track> {
-        delay(1000)
-        val searchResponse = networkClient.doRequest(TracksSearchRequest(""))
-        return if (searchResponse.resultCode == 200) {
-            (searchResponse as TracksSearchResponse).results.map {
-                val seconds = it.trackTimeMillis / 1000
-                val minutes = seconds / 60
-                val trackTime = "%02d:%02d".format(minutes, seconds % 60)
-                Track(it.trackName, it.artistName, trackTime)
-            }
-        } else emptyList()
+        return emptyList()
     }
 }

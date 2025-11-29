@@ -1,14 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.lifecycle:lifecycle-viewmodel-compose-android:2.9.4@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/8.14.3/transforms/36d6438cd42b6325e6695f4150684088/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/8.14.3/transforms/36d6438cd42b6325e6695f4150684088/transformed/lifecycle-viewmodel-compose-release/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/8.14.3/transforms/36d6438cd42b6325e6695f4150684088/transformed/lifecycle-viewmodel-compose-release/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/8.14.3/transforms/24ebe87f3410139598b46b0612c2f252/transformed/lifecycle-viewmodel-compose-release/res" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/8.14.3/transforms/24ebe87f3410139598b46b0612c2f252/transformed/lifecycle-viewmodel-compose-release/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/8.14.3/transforms/24ebe87f3410139598b46b0612c2f252/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-viewmodel-compose-android/2.9.4/4f5fc16f2fae8e9cfdbdf707090168d62e7baad1/lifecycle-viewmodel-compose-2.9.4-samples-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-viewmodel-compose-android/2.9.4/692398a5d2bf2837246128536c72609e53119586/lifecycle-viewmodel-compose-android-2.9.4-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-viewmodel-compose-android/2.9.4/4f5fc16f2fae8e9cfdbdf707090168d62e7baad1/lifecycle-viewmodel-compose-2.9.4-samples-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-viewmodel-compose-android/2.9.4/692398a5d2bf2837246128536c72609e53119586/lifecycle-viewmodel-compose-android-2.9.4-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

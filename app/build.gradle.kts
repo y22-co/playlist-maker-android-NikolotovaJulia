@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.compose.ui.text)
+    implementation(libs.androidx.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -70,4 +71,20 @@ dependencies {
     implementation("androidx.compose.material3:material3-window-size-class:1.1.0")
     implementation("androidx.compose.material:material-icons-extended:1.4.0")
     debugImplementation("androidx.compose.ui:ui-tooling")
+
+    implementation(platform("androidx.compose:compose-bom:2024.10.01")) // BOM для согласованных версий [web:10]
+    implementation("androidx.compose.ui:ui") // подтянет версии из BOM [web:10]
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.navigation:navigation-compose:2.8.3")
+
+    // DataStore Preferences
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
+    implementation("androidx.datastore:datastore-core:1.1.1") // опционально [web:13]
+
+    // Lifecycle
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.6")
+
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
 }

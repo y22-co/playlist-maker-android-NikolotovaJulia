@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53164c17-d6c5-49d0-ac6e-157c2791723b" name="Changes" comment="New md" />
+    <list default="true" id="53164c17-d6c5-49d0-ac6e-157c2791723b" name="Changes" comment="New md">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/data/ThemePreferences.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/domain/models/Track.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/screens/FabBottomSheetScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/screens/FavoritesScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/screens/PlaylistsScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/viewmodel/ThemeViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/creator/Creator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/creator/Creator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/data/Storage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/data/Storage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/data/TracksRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/data/TracksRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/domain/Track.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/domain/TrackDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/domain/dto/TrackDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/domain/TracksRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/domain/TracksRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/domain/TracksSearchResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/domain/TracksSearchResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/navigation/Navigation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/navigation/Navigation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/screens/MainScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/screens/MainScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/screens/SearchScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/screens/SearchScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/screens/SettingsScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/screens/SettingsScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/state/SearchState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/state/SearchState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/theme/Theme.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/theme/Type.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/theme/Type.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/viewmodel/SearchViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playlist_maker_android_nikolotovayulia/ui/viewmodel/SearchViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,9 +105,17 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "sprint-6"
+    "git-widget-placeholder": "sprint-7",
+    "last_opened_file_path": "C:/Users/User/AndroidStudioProject/gradle"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\AndroidStudioProject\gradle" />
+      <recent name="C:\Users\User\AndroidStudioProject\app" />
+      <recent name="C:\Users\User\AndroidStudioProject\app\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="playlist_maker_android_nikolotovayulia.app" />

@@ -1,6 +1,7 @@
 package com.example.playlist_maker_android_nikolotovayulia.ui.state
 
-import com.example.playlist_maker_android_nikolotovayulia.domain.Track
+import com.example.playlist_maker_android_nikolotovayulia.domain.models.Track
+
 
 sealed class SearchState {
     object Initial : SearchState()

@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/8.14.3/transforms/4ddb08bdc6d72934b5c45986badd1c3c/transformed/lifecycle-viewmodel-ktx-2.9.4/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/8.14.3/transforms/4ddb08bdc6d72934b5c45986badd1c3c/transformed/lifecycle-viewmodel-ktx-2.9.4/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/8.14.3/transforms/4ddb08bdc6d72934b5c45986badd1c3c/transformed/lifecycle-viewmodel-ktx-2.9.4/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/8.14.3/transforms/bf39e8e41866a040ac8eda729959f14a/transformed/lifecycle-viewmodel-ktx-2.9.4/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/8.14.3/transforms/bf39e8e41866a040ac8eda729959f14a/transformed/lifecycle-viewmodel-ktx-2.9.4/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/8.14.3/transforms/bf39e8e41866a040ac8eda729959f14a/transformed/lifecycle-viewmodel-ktx-2.9.4/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-viewmodel-ktx/2.9.4/6b61248b684d6cc83a4855ef1b98dd76536d8ec7/lifecycle-viewmodel-ktx-2.9.4-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-viewmodel-ktx/2.9.4/6b61248b684d6cc83a4855ef1b98dd76536d8ec7/lifecycle-viewmodel-ktx-2.9.4-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

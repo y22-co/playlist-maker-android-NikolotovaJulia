@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.tracing:tracing:1.2.0@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/8.14.3/transforms/d56c8f1eb170e466e6ac177560e1fc06/transformed/tracing-1.2.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/8.14.3/transforms/d56c8f1eb170e466e6ac177560e1fc06/transformed/tracing-1.2.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/8.14.3/transforms/d56c8f1eb170e466e6ac177560e1fc06/transformed/tracing-1.2.0/res" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/8.14.3/transforms/3d67b72e454fab72e11d49b8df628439/transformed/tracing-1.2.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/8.14.3/transforms/3d67b72e454fab72e11d49b8df628439/transformed/tracing-1.2.0/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/8.14.3/transforms/3d67b72e454fab72e11d49b8df628439/transformed/tracing-1.2.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.tracing/tracing/1.2.0/7a8da514613e34b2f3cc6f1d9dc805295d9838a7/tracing-1.2.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/androidx.tracing/tracing/1.2.0/7a8da514613e34b2f3cc6f1d9dc805295d9838a7/tracing-1.2.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
