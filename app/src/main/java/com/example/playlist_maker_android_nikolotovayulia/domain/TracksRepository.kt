@@ -1,8 +1,22 @@
 package com.example.playlist_maker_android_nikolotovayulia.domain
 
 import com.example.playlist_maker_android_nikolotovayulia.domain.models.Track
+import kotlinx.coroutines.flow.Flow
 
 interface TracksRepository {
     suspend fun searchTracks(expression: String): List<Track>
-    suspend fun getAllTracks(): List<Track>
+
+    fun getTrackByNameAndArtist(track: Track): Flow<Track?>
+
+    fun getFavoriteTracks(): Flow<List<Track>>
+
+    fun getTrackById(id: Long): Track?
+
+    suspend fun insertTrackToPlaylist(track: Track, playlistId: Long)
+
+    suspend fun deleteTrackFromPlaylist(track: Track)
+
+    suspend fun updateTrackFavoriteStatus(track: Track, isFavorite: Boolean)
+
+    fun deleteTracksByPlaylistId(playlistId: Long)
 }

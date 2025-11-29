@@ -10,13 +10,17 @@ import com.example.playlist_maker_android_nikolotovayulia.ui.screens.SearchScree
 import com.example.playlist_maker_android_nikolotovayulia.ui.screens.SettingsScreen
 import com.example.playlist_maker_android_nikolotovayulia.ui.screens.FavoritesScreen
 import com.example.playlist_maker_android_nikolotovayulia.ui.screens.PlaylistsScreen
+import com.example.playlist_maker_android_nikolotovayulia.ui.screens.NewPlaylistScreen
+import com.example.playlist_maker_android_nikolotovayulia.ui.screens.TrackDetailsScreen
 
-enum class Screen { Main, Search, Settings, Playlists, Favorites }
-
+enum class Screen {
+    Main, Search, Settings, Playlists, Favorites, NewPlaylist, TrackDetails
+}
 
 @Composable
 fun PlaylistHost(navController: NavHostController = rememberNavController()) {
     NavHost(navController = navController, startDestination = Screen.Main.name) {
+
         composable(Screen.Main.name) {
             MainScreen(
                 onNavigateToSearch = { navController.navigate(Screen.Search.name) },
@@ -25,17 +29,53 @@ fun PlaylistHost(navController: NavHostController = rememberNavController()) {
                 onNavigateToFavorites = { navController.navigate(Screen.Favorites.name) }
             )
         }
+
         composable(Screen.Search.name) {
-            SearchScreen(onNavigateBack = { navController.popBackStack() })
+            SearchScreen(
+                onNavigateBack = { navController.popBackStack() },
+                navController = navController
+            )
         }
+
         composable(Screen.Settings.name) {
             SettingsScreen(onNavigateBack = { navController.popBackStack() })
         }
+
         composable(Screen.Playlists.name) {
-            PlaylistsScreen(onNavigateBack = { navController.popBackStack() })
+            PlaylistsScreen(
+                addNewPlaylist = { navController.navigate(Screen.NewPlaylist.name) },
+                navigateToPlaylist = { playlistId ->
+                    // Здесь позже добавим переход на экран деталей плейлиста
+                },
+                navigateBack = { navController.popBackStack() }
+            )
         }
+
+        composable(Screen.NewPlaylist.name) {
+            NewPlaylistScreen(
+                navigateBack = { navController.popBackStack() }
+            )
+        }
+
         composable(Screen.Favorites.name) {
-            FavoritesScreen(onNavigateBack = { navController.popBackStack() })
+            FavoritesScreen(
+                onNavigateBack = { navController.popBackStack() },
+                onTrackClick = { track ->
+                    navController.navigate("${Screen.TrackDetails.name}/${track.id}")
+                }
+            )
+        }
+
+        composable("${Screen.TrackDetails.name}/{trackId}") { backStackEntry ->
+            val trackId = backStackEntry.arguments?.getString("trackId")?.toLongOrNull()
+            if (trackId != null) {
+                TrackDetailsScreen(
+                    trackId = trackId,
+                    onNavigateBack = { navController.popBackStack() }
+                )
+            } else {
+                navController.popBackStack()
+            }
         }
     }
 }

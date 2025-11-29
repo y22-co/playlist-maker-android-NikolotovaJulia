@@ -1,43 +1,44 @@
 package com.example.playlist_maker_android_nikolotovayulia.data
 
-import com.example.playlist_maker_android_nikolotovayulia.domain.NetworkClient
 import com.example.playlist_maker_android_nikolotovayulia.domain.TracksRepository
-import com.example.playlist_maker_android_nikolotovayulia.domain.TracksSearchRequest
-import com.example.playlist_maker_android_nikolotovayulia.domain.TracksSearchResponse
 import com.example.playlist_maker_android_nikolotovayulia.domain.models.Track
-import kotlinx.coroutines.delay
-import kotlin.collections.map
-import com.example.playlist_maker_android_nikolotovayulia.domain.models.NO_PLAYLIST
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.Flow
 
+class TracksRepositoryImpl(
+    private val scope: CoroutineScope
+) : TracksRepository {
 
-class TracksRepositoryImpl(private val networkClient: NetworkClient) : TracksRepository {
+    private val database = DatabaseMock.DatabaseHolder.get(scope)
+
 
     override suspend fun searchTracks(expression: String): List<Track> {
-        if (expression.isBlank()) return emptyList()
-        val response = networkClient.doRequest(TracksSearchRequest(expression))
-        delay(300) // легкий дебаунс имитации сети
-        return if (response.resultCode == 200) {
-            (response as TracksSearchResponse).results.map { dto ->
-                val seconds = dto.trackTimeMillis / 1000
-                val minutes = seconds / 60
-                val trackTime = "%02d:%02d".format(minutes, seconds % 60)
-                Track(
-                    trackName = dto.trackName,
-                    artistName = dto.artistName,
-                    trackTime = trackTime,
-                    playlistId = NO_PLAYLIST, // пока нет реальной привязки
-                    id = dto.id,
-                    favorite = dto.favorite
-                )
-            }
-        } else {
-            emptyList()
-        }
+        return database.searchTracks(expression)
     }
 
-    override suspend fun getAllTracks(): List<Track> {
-        // По требованиям поиска пустая строка не должна возвращать все треки,
-        // поэтому здесь можно вернуть пусто или предусмотреть отдельный кейс списка.
-        return emptyList()
+    override fun getTrackByNameAndArtist(track: Track): Flow<Track?> {
+        return database.getTrackByNameAndArtist(track)
+    }
+
+    override fun getFavoriteTracks(): Flow<List<Track>> {
+        return database.getFavoriteTracks()
+    }
+
+    override suspend fun insertTrackToPlaylist(track: Track, playlistId: Long) {
+        database.insertTrack(track.copy(playlistId = playlistId))
+    }
+
+    override suspend fun deleteTrackFromPlaylist(track: Track) {
+        database.insertTrack(track.copy(playlistId = 0))
+    }
+
+    override suspend fun updateTrackFavoriteStatus(track: Track, isFavorite: Boolean) {
+        database.insertTrack(track.copy(favorite = isFavorite))
+    }
+
+    override fun getTrackById(id: Long): Track? = database.getTrackById(id)
+
+    override fun deleteTracksByPlaylistId(playlistId: Long) {
+        database.deleteTracksByPlaylistId(playlistId)
     }
 }

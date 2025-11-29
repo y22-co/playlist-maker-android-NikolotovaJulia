@@ -5,12 +5,15 @@ import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material.icons.filled.HeadsetMic
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Divider
+import androidx.compose.material3.DividerDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -54,7 +57,7 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                 title = { Text(text = stringResource(R.string.settings_title)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Filled.ArrowBack, contentDescription = null)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
                     }
                 }
             )
@@ -81,7 +84,7 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                 Switch(checked = isDark, onCheckedChange = { themeVm.setDarkTheme(it) })
             }
 
-            Divider()
+            HorizontalDivider(Modifier, DividerDefaults.Thickness, DividerDefaults.color)
 
             Row(
                 modifier = Modifier
@@ -101,7 +104,7 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                 Icon(Icons.Filled.Share, contentDescription = null)
             }
 
-            Divider()
+            HorizontalDivider(Modifier, DividerDefaults.Thickness, DividerDefaults.color)
 
             Row(
                 modifier = Modifier
@@ -123,7 +126,7 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                 Icon(Icons.Filled.HeadsetMic, contentDescription = null)
             }
 
-            Divider()
+            HorizontalDivider(Modifier, DividerDefaults.Thickness, DividerDefaults.color)
 
             Row(
                 modifier = Modifier
