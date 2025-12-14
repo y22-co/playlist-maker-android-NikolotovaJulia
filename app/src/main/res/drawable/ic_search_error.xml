@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- синий круг -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M48,4
+                          A44,44 0 1,1 47.9,4" />
+
+    <!-- восклицательный знак -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M44,26
+                          h8
+                          v34
+                          h-8
+                          z" />
+
+    <!-- точка -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M44,64
+                          h8
+                          v8
+                          h-8
+                          z" />
+</vector>

@@ -1,55 +1,108 @@
 package com.example.playlist_maker_android_nikolotovayulia.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.playlist_maker_android_nikolotovayulia.creator.Creator
+import com.example.playlist_maker_android_nikolotovayulia.App
+import com.example.playlist_maker_android_nikolotovayulia.data.SearchHistoryRepositoryImpl
+import com.example.playlist_maker_android_nikolotovayulia.data.TracksRepositoryImpl
+import com.example.playlist_maker_android_nikolotovayulia.domain.SearchHistoryRepository
 import com.example.playlist_maker_android_nikolotovayulia.domain.TracksRepository
 import com.example.playlist_maker_android_nikolotovayulia.ui.state.SearchState
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import java.io.IOException
-import com.example.playlist_maker_android_nikolotovayulia.domain.models.Track
-
+import kotlin.coroutines.cancellation.CancellationException
 
 class SearchViewModel(
-    private val tracksRepository: TracksRepository
+    private val searchHistoryRepository: SearchHistoryRepository = SearchHistoryRepositoryImpl(App.instance)
 ) : ViewModel() {
+
+    private val tracksRepository: TracksRepository = TracksRepositoryImpl(App.instance)
 
     private val _allTracksScreenState = MutableStateFlow<SearchState>(SearchState.Initial)
     val allTracksScreenState: StateFlow<SearchState> = _allTracksScreenState.asStateFlow()
 
-    private var searchJob: kotlinx.coroutines.Job? = null
+    private val _query = MutableStateFlow("")
+    val query: StateFlow<String> = _query.asStateFlow()
 
-    fun search(query: String) {
-        if (query.isBlank()) {
-            _allTracksScreenState.update { SearchState.Initial }
+    private var searchJob: Job? = null
+    private var lastQuery: String = ""
+    private val _history = MutableStateFlow<List<String>>(emptyList())
+    val history: StateFlow<List<String>> = _history.asStateFlow()
+
+    init {
+        viewModelScope.launch {
+            _history.value = searchHistoryRepository.getEntries().take(3)
+        }
+    }
+
+    private fun saveQueryToHistory() {
+        val q = _query.value.trim()
+        if (q.isEmpty()) return
+        searchHistoryRepository.addEntry(q)
+        viewModelScope.launch {
+            _history.value = searchHistoryRepository.getEntries().take(3)
+        }
+    }
+
+    fun onQueryChanged(newQuery: String) {
+        _query.value = newQuery
+
+        val q = newQuery.trim()
+        if (q.isBlank()) {
+            searchJob?.cancel()
+            _allTracksScreenState.value = SearchState.Initial
             return
         }
+
+        search()
+    }
+
+    fun search() {
+        val q = _query.value.trim()
+        if (q.isBlank()) {
+            searchJob?.cancel()
+            _allTracksScreenState.value = SearchState.Initial
+            return
+        }
+
+        lastQuery = q
         searchJob?.cancel()
         searchJob = viewModelScope.launch(Dispatchers.IO) {
-            _allTracksScreenState.update { SearchState.Loading }
             try {
-                kotlinx.coroutines.delay(350)
-                val list = tracksRepository.searchTracks(query)
-                _allTracksScreenState.update { SearchState.Success(foundList = list) }
+                _allTracksScreenState.value = SearchState.Loading
+                val result = tracksRepository.searchRemoteTracks(q)
+                result.fold(
+                    onSuccess = { list ->
+                        _allTracksScreenState.value =
+                            if (list.isEmpty()) SearchState.EmptyResult
+                            else SearchState.Success(list)
+                    },
+                    onFailure = {
+                        _allTracksScreenState.value = SearchState.Error
+                    }
+                )
+            } catch (e: CancellationException) {
+                throw e
             } catch (e: Exception) {
-                _allTracksScreenState.update { SearchState.Error(e.message ?: "Unknown error") }
+                _allTracksScreenState.value = SearchState.Error
             }
         }
     }
 
-    companion object {
-        fun getViewModelFactory(): ViewModelProvider.Factory =
-            object : ViewModelProvider.Factory {
-                @Suppress("UNCHECKED_CAST")
-                override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                    return SearchViewModel(Creator.getTracksRepository()) as T
-                }
-            }
+    fun retryLastSearch() {
+        if (lastQuery.isNotBlank()) {
+            _query.value = lastQuery
+            search()
+        }
+    }
+
+    fun clearQuery() {
+        _query.value = ""
+        searchJob?.cancel()
+        _allTracksScreenState.value = SearchState.Initial
     }
 }

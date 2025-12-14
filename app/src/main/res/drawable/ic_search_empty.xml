@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- жёлтый круг -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M48,4
+                          A44,44 0 1,1 47.9,4" />
+
+    <!-- глаза -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,34
+                          a4,4 0 1,1 0.1,0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M58,34
+                          a4,4 0 1,1 0.1,0" />
+
+    <!-- грустный рот -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M34,62
+                          Q48,52 62,62" />
+</vector>
