@@ -17,9 +17,27 @@
     <dimen name="font_size_item">16sp</dimen>
     <dimen name="padding_default_settings">16dp</dimen>
     <dimen name="spacing_medium_settings">12dp</dimen>
-
     <dimen name="topappbar_height_min">56dp</dimen>
     <dimen name="row_height_min">56dp</dimen>
     <dimen name="spacing_list_between_items">12dp</dimen>
     <dimen name="divider_alpha_hint">12</dimen>
+
+    <dimen name="fab_padding">32dp</dimen>
+    <dimen name="bottomsheet_horizontal_padding">16dp</dimen>
+    <dimen name="bottomsheet_icon_size">32dp</dimen>
+    <dimen name="bottomsheet_icon_top_padding">16dp</dimen>
+
+    <dimen name="track_cover_size">220dp</dimen>
+    <dimen name="track_actions_top_spacing">24dp</dimen>
+    <dimen name="track_action_button_size">56dp</dimen>
+    <dimen name="track_action_icon_size">24dp</dimen>
+    <dimen name="track_duration_top_spacing">16dp</dimen>
+    <dimen name="track_details_horizontal_padding">16dp</dimen>
+
+    <dimen name="new_playlist_cover_size">120dp</dimen>
+    <dimen name="new_playlist_cover_top_spacing">32dp</dimen>
+    <dimen name="new_playlist_fields_top_spacing">32dp</dimen>
+    <dimen name="new_playlist_button_height">48dp</dimen>
+    <dimen name="new_playlist_button_corner">8dp</dimen>
+    <dimen name="track_image_size">56dp</dimen>
 </resources>

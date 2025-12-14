@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.playlist_maker_android_nikolotovayulia.navigation.PlaylistHost
 import com.example.playlist_maker_android_nikolotovayulia.ui.theme.PlaylistMakerAndroidNikolotovaYulia
 import com.example.playlist_maker_android_nikolotovayulia.ui.viewmodel.ThemeViewModel
+import androidx.compose.runtime.collectAsState
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +17,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val themeVm: ThemeViewModel = viewModel()
             PlaylistMakerAndroidNikolotovaYulia(
-                darkTheme = themeVm.darkTheme.value,
+                darkTheme = themeVm.darkTheme.collectAsState().value,
                 dynamicColor = true
             ) {
                 PlaylistHost()
