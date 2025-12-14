@@ -1,12 +1,8 @@
 package com.example.playlist_maker_android_nikolotovayulia.domain.models
 
-const val NO_PLAYLIST: Long = -1L
-
 data class Track(
+    val id: Long,
     val trackName: String,
     val artistName: String,
-    val trackTime: String,
-    val playlistId: Long = NO_PLAYLIST,
-    val id: Long,
-    val favorite: Boolean
+    val trackTimeMillis: Int
 )

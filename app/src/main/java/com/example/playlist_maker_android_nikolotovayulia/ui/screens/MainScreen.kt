@@ -1,5 +1,6 @@
 package com.example.playlist_maker_android_nikolotovayulia.ui.screens
 
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -16,22 +17,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
-import com.example.playlist_maker_android_nikolotovayulia.R
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
-import androidx.compose.ui.unit.dp
+import com.example.playlist_maker_android_nikolotovayulia.R
+import androidx.compose.ui.res.dimensionResource
 
 @Composable
 fun MainScreen(
     onNavigateToSearch: () -> Unit,
-    onNavigateToSettings: () -> Unit,
-    onNavigateToPlaylists: () -> Unit,
-    onNavigateToFavorites: () -> Unit
+    onNavigateToSettings: () -> Unit
 ) {
+    val context = LocalContext.current
+
     val paddingDefault = dimensionResource(R.dimen.padding_default)
     val spacingSmall = dimensionResource(R.dimen.spacing_small)
     val cornerRadiusBottom = dimensionResource(R.dimen.corner_radius_bottom)
@@ -54,7 +55,10 @@ fun MainScreen(
                 .fillMaxWidth()
                 .background(
                     Color(0xFF3D6EFF),
-                    RoundedCornerShape(bottomStart = cornerRadiusBottom, bottomEnd = cornerRadiusBottom)
+                    RoundedCornerShape(
+                        bottomStart = cornerRadiusBottom,
+                        bottomEnd = cornerRadiusBottom
+                    )
                 )
                 .padding(vertical = paddingHeaderV, horizontal = paddingHeaderH)
         ) {
@@ -75,8 +79,8 @@ fun MainScreen(
             paddingH = paddingItemH,
             paddingV = paddingItemV,
             fontSizeSp = fontSizeItem.sp,
-            onClick = onNavigateToSearch
-        )
+        ) { onNavigateToSearch() }
+
         DrawerItem(
             icon = Icons.Default.PlayArrow,
             text = "Плейлисты",
@@ -84,8 +88,10 @@ fun MainScreen(
             paddingH = paddingItemH,
             paddingV = paddingItemV,
             fontSizeSp = fontSizeItem.sp,
-            onClick = onNavigateToPlaylists
-        )
+        ) {
+            Toast.makeText(context, "Раздел Плейлисты ещё в разработке", Toast.LENGTH_SHORT).show()
+        }
+
         DrawerItem(
             icon = Icons.Default.FavoriteBorder,
             text = "Избранное",
@@ -93,8 +99,10 @@ fun MainScreen(
             paddingH = paddingItemH,
             paddingV = paddingItemV,
             fontSizeSp = fontSizeItem.sp,
-            onClick = onNavigateToFavorites
-        )
+        ) {
+            Toast.makeText(context, "Раздел Избранное ещё в разработке", Toast.LENGTH_SHORT).show()
+        }
+
         DrawerItem(
             icon = Icons.Default.Settings,
             text = "Настройки",
@@ -102,8 +110,7 @@ fun MainScreen(
             paddingH = paddingItemH,
             paddingV = paddingItemV,
             fontSizeSp = fontSizeItem.sp,
-            onClick = onNavigateToSettings
-        )
+        ) { onNavigateToSettings() }
     }
 }
 
