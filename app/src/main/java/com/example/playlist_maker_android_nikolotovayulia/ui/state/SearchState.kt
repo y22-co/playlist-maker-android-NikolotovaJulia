@@ -4,8 +4,9 @@ import com.example.playlist_maker_android_nikolotovayulia.domain.models.Track
 
 
 sealed class SearchState {
-    object Initial : SearchState()
-    object Loading : SearchState()
+    data object Initial : SearchState()
+    data object Loading : SearchState()
     data class Success(val foundList: List<Track>) : SearchState()
-    data class Error(val error: String) : SearchState()
+    data object EmptyResult : SearchState()
+    data class Error(val error: String?) : SearchState()
 }
