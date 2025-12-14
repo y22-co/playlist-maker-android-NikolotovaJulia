@@ -22,4 +22,31 @@
     <string name="menu_settings">Настройки</string>
     <string name="theme_switch_title">Темная тема</string>
     <string name="settings_title">Настройки</string>
+    <string name="search_title">Поиск</string>
+    <string name="open_panel_button">Открыть панель</string>
+    <string name="fab_description">Открыть панель действий</string>
+    <string name="bottomsheet_text">Это панель BottomSheet</string>
+
+    <string name="new_playlist_title">Новый плейлист</string>
+    <string name="playlist_name_hint">Название*</string>
+    <string name="playlist_description_hint">Описание</string>
+    <string name="save_playlist">Создать</string>
+
+    <string name="back">Назад</string>
+    <string name="add_playlist">Создать плейлист</string>
+
+    <string name="add_to_favorites">Добавить в избранное</string>
+    <string name="add_to_playlist_title">Добавить в плейлист</string>
+    <string name="favorites_title">Избранное</string>
+    <string name="no_favorites">Нет избранных треков</string>
+
+
+    <string name="duration_label">Длительность</string>
+
+    <string name="playlists_title">Плейлисты</string>
+
+    <string name="initial_message_search">Введите запрос для поиска треков</string>
+    <string name="search_no_results">По этому запросу пока ничего нет</string>
+
+
 </resources>

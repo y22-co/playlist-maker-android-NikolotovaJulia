@@ -1,3 +1,4 @@
+// navigation/Navigation.kt
 package com.example.playlist_maker_android_nikolotovayulia.navigation
 
 import androidx.compose.runtime.Composable
@@ -8,21 +9,19 @@ import androidx.navigation.compose.rememberNavController
 import com.example.playlist_maker_android_nikolotovayulia.ui.screens.MainScreen
 import com.example.playlist_maker_android_nikolotovayulia.ui.screens.SearchScreen
 import com.example.playlist_maker_android_nikolotovayulia.ui.screens.SettingsScreen
-import com.example.playlist_maker_android_nikolotovayulia.ui.screens.FavoritesScreen
-import com.example.playlist_maker_android_nikolotovayulia.ui.screens.PlaylistsScreen
 
-enum class Screen { Main, Search, Settings, Playlists, Favorites }
-
+enum class Screen { Main, Search, Settings }
 
 @Composable
 fun PlaylistHost(navController: NavHostController = rememberNavController()) {
-    NavHost(navController = navController, startDestination = Screen.Main.name) {
+    NavHost(
+        navController = navController,
+        startDestination = Screen.Main.name
+    ) {
         composable(Screen.Main.name) {
             MainScreen(
                 onNavigateToSearch = { navController.navigate(Screen.Search.name) },
-                onNavigateToSettings = { navController.navigate(Screen.Settings.name) },
-                onNavigateToPlaylists = { navController.navigate(Screen.Playlists.name) },
-                onNavigateToFavorites = { navController.navigate(Screen.Favorites.name) }
+                onNavigateToSettings = { navController.navigate(Screen.Settings.name) }
             )
         }
         composable(Screen.Search.name) {
@@ -30,12 +29,6 @@ fun PlaylistHost(navController: NavHostController = rememberNavController()) {
         }
         composable(Screen.Settings.name) {
             SettingsScreen(onNavigateBack = { navController.popBackStack() })
-        }
-        composable(Screen.Playlists.name) {
-            PlaylistsScreen(onNavigateBack = { navController.popBackStack() })
-        }
-        composable(Screen.Favorites.name) {
-            FavoritesScreen(onNavigateBack = { navController.popBackStack() })
         }
     }
 }
