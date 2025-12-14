@@ -21,6 +21,7 @@ class TracksRepositoryImpl(
     private val db = AppDatabase.get(context)
     private val trackDao = db.trackDao()
 
+    private val playlistDao = db.playlistDao()
     // iTunes
     private val retrofit = Retrofit.Builder()
         .baseUrl("https://itunes.apple.com/")
@@ -53,15 +54,26 @@ class TracksRepositoryImpl(
 
         val updated = base.copy(playlistId = playlistId)
         trackDao.insertTrack(updated.toEntity())
+
+        playlistDao.incrementTracksCount(playlistId)
     }
+
 
     override suspend fun deleteTrackFromPlaylist(track: Track) {
         val existing = trackDao.getTrackById(track.id)
         val base = existing?.toDomain() ?: track
 
-        val updated = base.copy(playlistId = 0)
+        val playlistId = base.playlistId
+        val updated = base.copy(playlistId = 0L)
+
         trackDao.insertTrack(updated.toEntity())
+
+        if (playlistId != 0L) {
+            playlistDao.decrementTracksCount(playlistId)
+        }
     }
+
+
 
     override suspend fun updateTrackFavoriteStatus(track: Track, isFavorite: Boolean) {
         val existing = trackDao.getTrackById(track.id)
@@ -82,4 +94,6 @@ class TracksRepositoryImpl(
         trackDao.getTracksByPlaylistId(playlistId).map { list -> list.map { it.toDomain() } }
 
     override suspend fun searchTracks(expression: String): List<Track> = emptyList()
+
+
 }

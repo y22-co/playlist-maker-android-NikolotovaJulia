@@ -145,6 +145,9 @@ fun TrackDetailsScreen(
         }
 
         if (showSheet) {
+            val vm: PlaylistViewModel = viewModel()
+            val playlists by vm.playlists.collectAsState(initial = emptyList())
+
             ModalBottomSheet(
                 onDismissRequest = { showSheet = false },
                 sheetState = sheetState

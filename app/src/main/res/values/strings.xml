@@ -38,7 +38,7 @@
     <string name="add_to_favorites">Добавить в избранное</string>
     <string name="add_to_playlist_title">Добавить в плейлист</string>
     <string name="favorites_title">Избранное</string>
-    <string name="no_favorites">Нет избранных треков</string>
+    <string name="no_favorites">Ваша медиатека пуста</string>
 
     <string name="search_title">Поиск</string>
 
@@ -47,7 +47,7 @@
     <string name="playlists_title">Плейлисты</string>
 
     <string name="server_error_title">Произошла ошибка сервера</string>
-    <string name="nothing_found_title">Ничего не найдено</string>
+    <string name="nothing_found_title">Ничего не нашлось</string>
     <string name="nothing_found_message">Попробуйте изменить запрос</string>
     <string name="retry">Обновить</string>
 

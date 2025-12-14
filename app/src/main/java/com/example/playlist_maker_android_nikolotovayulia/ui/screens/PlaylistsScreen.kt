@@ -75,7 +75,7 @@ fun PlaylistListItem(playlist: Playlist, onClick: () -> Unit) {
             horizontalAlignment = Alignment.Start
         ) {
             Text(playlist.name, fontSize = 16.sp)
-            val text = "${playlist.tracks.size} треков"
+            val text = "${playlist.tracksCount} треков"
             Text(text, fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }

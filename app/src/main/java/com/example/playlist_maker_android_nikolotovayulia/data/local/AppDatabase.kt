@@ -11,7 +11,7 @@ import com.example.playlist_maker_android_nikolotovayulia.data.local.entity.Trac
 
 @Database(
     entities = [TrackEntity::class, PlaylistEntity::class],
-    version = 5,
+    version = 8,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

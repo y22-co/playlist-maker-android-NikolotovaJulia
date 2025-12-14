@@ -28,6 +28,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -57,6 +58,7 @@ fun PlaylistScreen(
     LaunchedEffect(playlist.id) {
         viewModel.loadPlaylistTracks(playlist.id)
     }
+
 
     Scaffold(
         topBar = {
@@ -114,6 +116,20 @@ fun PlaylistScreen(
             }
 
             Spacer(Modifier.height(dimensionResource(R.dimen.spacing_medium_settings)))
+
+            Text(
+                text = playlist.name,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Medium
+            )
+
+            if (playlist.description.isNotBlank()) {
+                Text(
+                    text = playlist.description,
+                    fontSize = 14.sp,
+                    color = Color.Gray
+                )
+            }
 
             Text(
                 text = "${tracks.size} треков",
