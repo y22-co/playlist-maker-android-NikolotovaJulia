@@ -5,17 +5,17 @@ import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material.icons.filled.HeadsetMic
 import androidx.compose.material.icons.filled.Share
-import androidx.compose.material3.Divider
+import androidx.compose.material3.DividerDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -25,7 +25,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.playlist_maker_android_nikolotovayulia.R
 import com.example.playlist_maker_android_nikolotovayulia.ui.viewmodel.ThemeViewModel
@@ -54,7 +53,7 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                 title = { Text(text = stringResource(R.string.settings_title)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Filled.ArrowBack, contentDescription = null)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
                     }
                 }
             )
@@ -66,22 +65,6 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                 .padding(padding)
                 .padding(horizontal = paddingSettings)
         ) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .heightIn(min = rowMinHeight)
-                    .padding(vertical = spacingMedium),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = stringResource(R.string.theme_switch_title),
-                    style = MaterialTheme.typography.bodyLarge,
-                    modifier = Modifier.weight(1f)
-                )
-                Switch(checked = isDark, onCheckedChange = { themeVm.setDarkTheme(it) })
-            }
-
-            Divider()
 
             Row(
                 modifier = Modifier
@@ -101,7 +84,7 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                 Icon(Icons.Filled.Share, contentDescription = null)
             }
 
-            Divider()
+            HorizontalDivider(Modifier, DividerDefaults.Thickness, DividerDefaults.color)
 
             Row(
                 modifier = Modifier
@@ -123,7 +106,7 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                 Icon(Icons.Filled.HeadsetMic, contentDescription = null)
             }
 
-            Divider()
+            HorizontalDivider(Modifier, DividerDefaults.Thickness, DividerDefaults.color)
 
             Row(
                 modifier = Modifier
