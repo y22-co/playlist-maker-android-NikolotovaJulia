@@ -38,7 +38,7 @@
 - Android SDK API 36
 2. Клонируйте репозиторий:
    ```sh
-   git clone https://github.com/Xlazzzy/playlist-maker-android-RassokhinES.git
+   git clone https://github.com/y22-co/playlist-maker-android-NikolotovaJulia.git
    ```
 3. Откройте проект в Android Studio:  
    **File → Open → выберите папку проекта**
@@ -62,15 +62,15 @@
 ## 📂 Структура проекта
 
 ```
-playlist-maker-android--RassokhinES/
+playlist-maker-android--NikolotovaYG/
 │
 ├── app/
 │   ├── src/
 │   │   ├── main/
-│   │   │   ├── java/com/example/playlist_maker_android_rassohinegor/
-│   │   │   │   ├── creator/      # Вспомогательные классы и фабрики
+│   │   │   ├── java/com/example/playlist_maker_android_nikolotovayulia/
 │   │   │   │   ├── data/         # Репозитории и работа с данными
 │   │   │   │   ├── domain/       # Модели и бизнес-логика
+│   │   │   │   ├── navigation/   # Навигация
 │   │   │   │   └── ui/           # Экраны и ViewModel
 │   │   │   └── res/              # Ресурсы (layout, drawable, values и т.д.)
 │   │   ├── androidTest/          # UI / интеграционные тесты
