@@ -1,5 +1,5 @@
 # 🎵 Playlist Maker 🎵
-[![Made with ❤️ by Playlist Maker](https://img.shields.io/badge/Made%20with%20❤️%20by-Playlist Maker-red)](https://github.com/y22-co)  
+[![Made with ❤️ by Playlist Maker](https://img.shields.io/badge/Made%20with%20❤️%20by-PlaylistMaker-red)](https://github.com/y22-co)  
 [![Open Source Love](https://img.shields.io/badge/Open%20Source-Yes-blueviolet)](https://github.com/y22-co/playlist-maker-android-NikolotovaJulia)  
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)  
 
