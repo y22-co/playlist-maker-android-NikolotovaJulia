@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("org.jetbrains.kotlin.kapt")      // для Room
+    id("org.jetbrains.dokka") version "1.9.20"
 }
 
 android {
@@ -97,4 +98,8 @@ dependencies {
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
+}
+
+tasks.dokkaHtml {
+    outputDirectory.set(file("$buildDir/dokka"))
 }

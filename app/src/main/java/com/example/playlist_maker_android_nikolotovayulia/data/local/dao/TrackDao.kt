@@ -24,6 +24,4 @@ interface TrackDao {
 
     @Query("DELETE FROM tracks WHERE playlistId = :playlistId")
     suspend fun deleteTracksByPlaylistId(playlistId: Long)
-
-
 }
